@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,18 +12,48 @@
 <body>
 
     <header>
-        <h1 class="title">Customer Panel</h1>
+        <div>
+            <h1 class="title">Customer Panel</h1>
+        </div>
+
+        <nav class="navbar" aria-label="Main navigation">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./page/list.html">List</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <section id="customer-form-section">
             <h2>Add New Customer</h2>
             <form id="customer-form">
+                <div class="input-container">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name" class="label">Name</label>
+                    <div class="underline"></div>
+                </div>
 
+                <div class="input-container">
+                    <input type="text" name="address" id="address" required>
+                    <label for="address" class="label">Address</label>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="input-container">
+                    <input type="tel" name="phone" id="phone" required>
+                    <label for="phone" class="label">Phone</label>
+                    <div class="underline"></div>
+                </div>
+
+                <button type="submit" id="submit">Add Customer</button>
             </form>
         </section>
+
     </main>
-    <script src="./assets/js/script.js"></script>
+    <script type="module" src="./assets/js/customers.js"></script>
+    <script type="module" src="./assets/js/form.js"></script>
+    <script type="module" src="./assets/js/list.js"></script>
 </body>
 
 </html>
