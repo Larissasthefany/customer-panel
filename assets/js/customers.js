@@ -1,5 +1,3 @@
-
-
 export class Customer {
   constructor(name, address, phone) {
     this.name = name;
@@ -39,4 +37,24 @@ export class Customer {
     const updated = customers.filter(c => c.internalId !== id);
     localStorage.setItem("customers", JSON.stringify(updated));
   }
+
+  // Busca cliente pelo internalId
+static getCustomerById(id) {
+  const customers = this.getAllCustomers();
+  return customers.find(c => c.internalId == id);
+}
+
+// Atualiza cliente existente
+static updateCustomer(id, newData) {
+  const customers = this.getAllCustomers();
+  const index = customers.findIndex(c => c.internalId == id);
+
+  if (index !== -1) {
+    customers[index].name = newData.name;
+    customers[index].address = newData.address;
+    customers[index].phone = newData.phone;
+    localStorage.setItem("customers", JSON.stringify(customers));
+  }
+}
+
 }
